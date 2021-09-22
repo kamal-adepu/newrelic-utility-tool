@@ -1,0 +1,18 @@
+NewRelic Utility Tool
+
+Change NewRelic_Key in .env file as per your newrelic rest api key.
+
+1) npm install
+2) nodemon server
+
+Postman
+
+To delete alerts in bulk add policy condition and alert conditions in file samples/bulk_delete.xlsx
+
+API:- http://localhost:3000/bulk/delete
+Method: Post
+Data: file samples/bulk_delete.xlsx
+
+OR
+
+curl --location --request POST 'http://localhost:3000/bulk/delete' --form 'file=@"/C:/Users/kamalakar.adepu/Desktop/bolt-tech/node-express-mvc-master/node-express-mvc-master/bulk_delete.xlsx"'
