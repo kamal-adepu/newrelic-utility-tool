@@ -3,7 +3,7 @@ const helper = require("../helper.js");
 var axios = require('axios')
 
 module.exports = {
-  async bulkdeleteAlerts(req, res, next) {
+  async bulkdeleteAlerts(req, res, next) { 
     
     try {
 

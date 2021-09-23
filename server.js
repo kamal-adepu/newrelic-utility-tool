@@ -3,7 +3,8 @@ const express = require('express'); // BRING IN EXPRESS
 const app = express(); // INITILIZE APP
 const path = require('path');
 const bodyParser = require('body-parser');
-const articles = require('./routes/alertRoutes'); // ARTICLES ROUTES
+const alertRoutes = require('./routes/alertRoutes'); // ROUTES
+const syntheticsRoutes = require('./routes/syntheticsRoutes'); // ROUTES
 global.__basedir = __dirname;
 
 global.AuthStr = process.env.NewRelic_Key
@@ -33,7 +34,9 @@ app.all('/*', (req, res, next) => {
 app.disable('x-powered-by');
 
 // ROUTES
-articles(app); // ARTICLES ROUTES
+
+alertRoutes(app);
+syntheticsRoutes(app);
 
 /*
 * START SERVER
