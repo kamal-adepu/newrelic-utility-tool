@@ -7,11 +7,50 @@ Change NewRelic_Key in .env file as per your newrelic rest api key.
 
 Postman
 
-To delete alerts in bulk add policy condition and alert conditions in file samples/bulk_delete.xlsx
+1) API to download existing synthetics conditions
 
-API:- http://localhost:3000/bulk/delete
-Method: Post
-Data: file samples/bulk_delete.xlsx
+    API:- http://localhost:3000/synthetics/getmonitors
+    Method: GET
+    Note:- Run this api in any of the browser it will download xlsx file which contain all existing synthetics monitors
+
+2) API to create bulk synthetics conditions
+
+    API:- http://localhost:3000/synthetics/bulk/create
+    Method:- POST
+    Note:- Use postman select form-data to upload file, please upload the file which contains same formet as provided in this file \samples\syn_add.xlsx, If file formet is not correct then you may end up creating wrong synthetics conditions.
+
+
+3) API to update bulk existing synthetics conditions
+
+    API:- http://localhost:3000/synthetics/bulk/update
+    Method:- POST
+    Note:- Use postman select form-data to upload file, please upload the file which contains monitors ID use the file downloaded from this api http://localhost:3000/synthetics/getmonitors, delete other rows which you dont want to update.
+
+4) API to delete bulk existing synthetics conditions
+
+    API:- http://localhost:3000/synthetics/bulk/delete
+    Method:- POST
+    Note:- Use postman select form-data to upload file, please upload the file which contains same formet as provided in this file \samples\syn_add.xlsx, If file formet is not correct then you may end up deleting wrong synthetics conditions.
+
+
+5) To delete alerts in bulk add policy condition and alert conditions in file samples/bulk_delete.xlsx
+
+    API:- http://localhost:3000/bulk/delete
+    Method:- Post
+    Note:- Use postman select form-data to upload file, please upload the file which contains same formet as provided in this file samples/bulk_delete.xlsx
+
+6) Create bulk NRQL Alerts 
+
+    API:- http://localhost:3000//bulk/nrql/create
+    Method:- Post
+    Note:- Use postman select form-data to upload file, please upload the file which contains same formet as provided in this file samples/bulk_nrql_create.xlsx
+
+
+
+
+
+
+
 
 OR
 

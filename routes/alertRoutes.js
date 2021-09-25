@@ -7,8 +7,4 @@ module.exports = app => {
 
   app.post('/bulk/nrql/create', AlertsController.createnrqlbulkAlerts);
 
-  app.post('/bulk/externalservice/create', AlertsController.createscbulkAlerts);
-
-  app.post('/bulk/synthetics/create', AlertsController.createsyntheticsbulkAlerts);
-
 };

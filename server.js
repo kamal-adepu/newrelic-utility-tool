@@ -8,6 +8,7 @@ const syntheticsRoutes = require('./routes/syntheticsRoutes'); // ROUTES
 global.__basedir = __dirname;
 
 global.AuthStr = process.env.NewRelic_Key
+global.monitor_link = process.env.GET_MONITOR_LINK
 
 const http = require('http'); // CORE MODULE, USED TO CREATE THE HTTP SERVER
 const server = http.createServer(app); // CREATE HTTP SERVER USING APP

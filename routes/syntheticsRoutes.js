@@ -9,4 +9,6 @@ module.exports = app => {
 
   app.post('/synthetics/bulk/delete', SyntheticsController.bulkDelete);
 
+  app.get('/synthetics/getmonitors', SyntheticsController.getMonitors);
+
 };
